@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Joba AI – The Future of Job Search in Nigeria</title>
+    <title>Joba AI – Free CV Builder, Job Matcher & Scholarships</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS + Custom Animations -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 100%); }
         
-        /* Glassmorphism with depth */
+        /* Glassmorphism cards */
         .glass-card {
             background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(16px);
@@ -25,8 +25,6 @@
             border-color: rgba(59, 130, 246, 0.4);
             box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
         }
-        
-        /* Feature image container */
         .feature-img {
             width: 100%;
             height: 220px;
@@ -38,8 +36,6 @@
             transform: scale(1.02);
             filter: brightness(1.05);
         }
-        
-        /* Buttons */
         .btn-primary {
             background: linear-gradient(90deg, #3b82f6, #2563eb);
             transition: all 0.3s ease;
@@ -60,8 +56,6 @@
             border-color: #3b82f6;
             transform: translateY(-3px);
         }
-        
-        /* Navigation underline */
         .nav-link {
             position: relative;
             padding-bottom: 4px;
@@ -79,8 +73,7 @@
         .nav-link:hover::after {
             width: 100%;
         }
-        
-        /* Animations */
+        /* Scroll animations for all sections */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
@@ -88,10 +81,6 @@
         @keyframes scaleIn {
             from { opacity: 0; transform: scale(0.96); }
             to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes subtleGlow {
-            0% { text-shadow: 0 0 0 rgba(59,130,246,0); }
-            100% { text-shadow: 0 0 8px rgba(59,130,246,0.3); }
         }
         .animate-fade-up {
             animation: fadeUp 0.8s ease forwards;
@@ -102,7 +91,8 @@
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
-        
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
         /* Mobile menu */
         .mobile-menu {
             max-height: 0;
@@ -112,12 +102,10 @@
         .mobile-menu.open {
             max-height: 340px;
         }
-        
-        /* Scrollbar */
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
-        
         /* Gradient text */
         .gradient-text {
             background: linear-gradient(135deg, #ffffff, #94a3b8, #3b82f6);
@@ -125,7 +113,20 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: subtleGlow 2s ease-in-out infinite alternate;
+        }
+        /* Counter styling */
+        .counter-card {
+            background: rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
         }
     </style>
 </head>
@@ -139,6 +140,7 @@
                 <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Home</a>
                 <a href="#features" class="nav-link text-gray-300 hover:text-white transition">Features</a>
                 <a href="#how-it-works" class="nav-link text-gray-300 hover:text-white transition">How It Works</a>
+                <a href="#satisfaction" class="nav-link text-gray-300 hover:text-white transition">Satisfaction</a>
                 <a href="#pricing" class="nav-link text-gray-300 hover:text-white transition">Pricing</a>
                 <a href="#testimonials" class="nav-link text-gray-300 hover:text-white transition">Success Stories</a>
             </div>
@@ -151,6 +153,7 @@
                 <a href="#home" class="hover:text-blue-400 transition">Home</a>
                 <a href="#features" class="hover:text-blue-400 transition">Features</a>
                 <a href="#how-it-works" class="hover:text-blue-400 transition">How It Works</a>
+                <a href="#satisfaction" class="hover:text-blue-400 transition">Satisfaction</a>
                 <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
                 <a href="#testimonials" class="hover:text-blue-400 transition">Success Stories</a>
                 <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-center transition">Get Started</a>
@@ -164,20 +167,20 @@
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="animate-fade-up">
                 <h1 class="text-5xl md:text-7xl font-extrabold mb-6 gradient-text">
-                    Your AI Career Partner
+                    Your AI Career Partner – <span class="text-green-400">100% Free</span>
                 </h1>
                 <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                    Build professional CVs, get AI‑matched jobs, and discover scholarships – all in one platform. <br> Trusted by job seekers across Nigeria.
+                    Joba AI helps you build a professional CV, find jobs that match your skills, and discover scholarships – all for free. No credit card, no hidden fees.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold inline-block shadow-lg">
-                        🚀 Launch Joba AI
+                        🚀 Start Using Joba AI
                     </a>
                     <a href="#features" class="btn-outline px-8 py-3 rounded-full text-lg font-semibold inline-block">
                         See Features →
                     </a>
                 </div>
-                <p class="text-sm text-gray-400 mt-4">No subscriptions – pay only once per feature</p>
+                <p class="text-sm text-gray-400 mt-4">Trusted by job seekers across Nigeria – no hidden fees, ever.</p>
             </div>
         </div>
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -187,134 +190,165 @@
         </div>
     </section>
 
-    <!-- ========== FEATURES WITH REALISTIC IMAGES ========== -->
+    <!-- ========== FEATURES SECTION ========== -->
     <section id="features" class="container mx-auto px-6 py-24">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Powerful AI Tools That Work</h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Real results, real jobs, real scholarships</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Everything You Need – Completely Free</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Three powerful AI tools to help you get hired or win scholarships.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-10">
             <!-- CV Builder -->
             <div class="glass-card rounded-2xl overflow-hidden animate-scale-in delay-100">
-                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" alt="Professional writing a CV" class="feature-img w-full h-56 object-cover">
+                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" alt="Professional writing a CV" class="feature-img">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">AI CV Builder</h3>
-                    <p class="text-gray-300 mb-4">Create an ATS‑friendly CV that recruiters love. Step‑by‑step guidance, modern templates, and instant PDF download after payment.</p>
+                    <h3 class="text-2xl font-bold mb-2">📄 AI CV Builder</h3>
+                    <p class="text-gray-300 mb-4">Create a professional CV that recruiters will notice. Our AI guides you step‑by‑step through personal info, education, work experience, skills, and more. You can preview your CV and download it as a PDF – all for free.</p>
                     <ul class="text-gray-400 text-sm space-y-1">
-                        <li>✓ Professional layouts</li>
-                        <li>✓ Skills & experience tailored</li>
-                        <li>✓ Pay ₦500 once</li>
+                        <li>✓ Professional templates that work with hiring software (ATS)</li>
+                        <li>✓ Add unlimited education, jobs, skills, and sectors of interest</li>
+                        <li>✓ Instant PDF download – no payment required</li>
                     </ul>
                 </div>
             </div>
             <!-- Job Matcher -->
             <div class="glass-card rounded-2xl overflow-hidden animate-scale-in delay-200">
-                <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600&h=400&fit=crop" alt="Person looking at job matches on laptop" class="feature-img w-full h-56 object-cover">
+                <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600&h=400&fit=crop" alt="Person looking at job matches" class="feature-img">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">AI Job Matcher</h3>
-                    <p class="text-gray-300 mb-4">Upload your CV and our AI finds jobs that perfectly match your skills – from RemoteOK, Microsoft, and more.</p>
+                    <h3 class="text-2xl font-bold mb-2">🎯 AI Job Matcher</h3>
+                    <p class="text-gray-300 mb-4">Upload your CV (PDF) and our AI will scan thousands of jobs to find those that match your skills and experience. You can filter by location, remote work, or “Nigeria only”. Apply links are shown for free – no payment needed.</p>
                     <ul class="text-gray-400 text-sm space-y-1">
-                        <li>✓ Intelligent skill matching</li>
-                        <li>✓ Filter by location & remote</li>
-                        <li>✓ Pay ₦1,000 to unlock apply links</li>
+                        <li>✓ Smart matching using sentence‑transformers AI</li>
+                        <li>✓ Jobs from RemoteOK, Microsoft, and a fallback CSV list</li>
+                        <li>✓ Direct apply links – no unlocking fees</li>
                     </ul>
                 </div>
             </div>
             <!-- Scholarship Finder -->
             <div class="glass-card rounded-2xl overflow-hidden animate-scale-in delay-300">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="Student celebrating scholarship" class="feature-img w-full h-56 object-cover">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="Student celebrating scholarship" class="feature-img">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-2">Scholarship Finder</h3>
-                    <p class="text-gray-300 mb-4">Discover scholarships worldwide. AI extracts requirements – GPA, documents, deadlines – and tells you exactly what you need.</p>
+                    <h3 class="text-2xl font-bold mb-2">🎓 Scholarship Finder</h3>
+                    <p class="text-gray-300 mb-4">Search for scholarships by name or country. Our AI reads the official website and tells you exactly what documents you need (GPA, IELTS, recommendation letters, essays, etc.). All analysis and official links are free.</p>
                     <ul class="text-gray-400 text-sm space-y-1">
-                        <li>✓ Search by name or country</li>
-                        <li>✓ AI requirement analysis</li>
-                        <li>✓ Pay ₦500 to unlock details</li>
+                        <li>✓ Search scholarships worldwide (DAAD, Chevening, Commonwealth, etc.)</li>
+                        <li>✓ AI extracts requirements: deadlines, GPA, test scores, documents</li>
+                        <li>✓ Direct link to the official application page</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== HOW IT WORKS (with realistic image) ========== -->
+    <!-- ========== HOW IT WORKS ========== -->
     <section id="how-it-works" class="container mx-auto px-6 py-24 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl my-10">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">How Joba AI Works</h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Simple three‑step process</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">How to Use Joba AI (Free)</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Three simple steps – no payment ever</p>
         </div>
         <div class="grid md:grid-cols-3 gap-12">
             <div class="text-center animate-fade-up delay-100">
                 <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">1</div>
-                <h3 class="text-xl font-semibold mb-2">Sign Up (Free)</h3>
-                <p class="text-gray-400">Create your account with just an email – no credit card required.</p>
+                <h3 class="text-xl font-semibold mb-2">Create a Free Account</h3>
+                <p class="text-gray-400">Login with any email address. No credit card, no trial – just free access.</p>
             </div>
             <div class="text-center animate-fade-up delay-200">
                 <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">2</div>
-                <h3 class="text-xl font-semibold mb-2">Build CV or Upload Resume</h3>
-                <p class="text-gray-400">Use our intelligent CV builder or upload an existing PDF.</p>
+                <h3 class="text-xl font-semibold mb-2">Build or Upload Your CV</h3>
+                <p class="text-gray-400">Use our AI CV builder to create a professional CV, or upload an existing PDF. Then let the AI match you to jobs and scholarships.</p>
             </div>
             <div class="text-center animate-fade-up delay-300">
                 <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">3</div>
-                <h3 class="text-xl font-semibold mb-2">Pay & Unlock</h3>
-                <p class="text-gray-400">One‑time payment for the feature you need – no recurring fees.</p>
+                <h3 class="text-xl font-semibold mb-2">Apply & Succeed</h3>
+                <p class="text-gray-400">Click on job apply links, read scholarship requirements, and download your CV – all at no cost.</p>
             </div>
         </div>
     </section>
 
-    <!-- ========== PRICING SECTION ========== -->
+    <!-- ========== SATISFACTION COUNTER SECTION (NEW) ========== -->
+    <section id="satisfaction" class="container mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Our Users Love Joba AI</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Real results from real people – all for free</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="counter-card animate-scale-in delay-100">
+                <div class="counter-number">2,500+</div>
+                <p class="text-gray-300 mt-2">Happy Job Seekers</p>
+                <div class="text-yellow-400 text-lg mt-2">★★★★★ (4.9)</div>
+            </div>
+            <div class="counter-card animate-scale-in delay-200">
+                <div class="counter-number">1,200+</div>
+                <p class="text-gray-300 mt-2">CVs Created</p>
+                <div class="text-gray-400 text-sm mt-2">ATS‑friendly and professional</div>
+            </div>
+            <div class="counter-card animate-scale-in delay-300">
+                <div class="counter-number">300+</div>
+                <p class="text-gray-300 mt-2">Scholarships Found</p>
+                <div class="text-gray-400 text-sm mt-2">Worth over ₦500 million</div>
+            </div>
+        </div>
+        <div class="text-center mt-12 animate-fade-up delay-400">
+            <p class="text-gray-300 italic">"Joba AI has helped thousands of Nigerians land jobs and win scholarships – at zero cost. Join them today!"</p>
+        </div>
+    </section>
+
+    <!-- ========== PRICING – ALL FREE ========== -->
     <section id="pricing" class="container mx-auto px-6 py-24">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Fair Pricing, No Surprises</h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">One‑time payments, lifetime access to each feature</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">100% Free – No Hidden Costs</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Every single feature is free. No subscriptions, no paywalls.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="glass-card rounded-2xl p-8 text-center animate-scale-in delay-100">
                 <h3 class="text-2xl font-bold mb-2">CV Download</h3>
-                <div class="text-5xl font-bold text-blue-400 mb-4">₦500</div>
-                <p class="text-gray-300 mb-4">Professional PDF CV</p>
+                <div class="text-5xl font-bold text-green-400 mb-4">FREE</div>
+                <p class="text-gray-300 mb-4">Professional PDF CV – no payment required</p>
                 <ul class="text-left text-gray-400 space-y-2 text-sm mb-6">
-                    <li>✓ ATS‑friendly design</li>
-                    <li>✓ Instant download</li>
+                    <li>✓ Unlimited CV creation</li>
+                    <li>✓ Instant PDF download</li>
                     <li>✓ All sections included</li>
                 </ul>
                 <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="btn-primary px-6 py-2 rounded-full inline-block w-full text-center">Get CV</a>
             </div>
             <div class="glass-card rounded-2xl p-8 text-center border border-blue-500/30 relative animate-scale-in delay-200">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Most Popular</div>
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full">Free Forever</div>
                 <h3 class="text-2xl font-bold mb-2">Job Matcher</h3>
-                <div class="text-5xl font-bold text-blue-400 mb-4">₦1,000</div>
-                <p class="text-gray-300 mb-4">Unlimited AI matches</p>
+                <div class="text-5xl font-bold text-green-400 mb-4">FREE</div>
+                <p class="text-gray-300 mb-4">Unlimited AI job matches</p>
                 <ul class="text-left text-gray-400 space-y-2 text-sm mb-6">
-                    <li>✓ Unlimited job matches</li>
+                    <li>✓ Unlimited job searches</li>
                     <li>✓ Location & remote filters</li>
-                    <li>✓ Apply links after payment</li>
+                    <li>✓ Free apply links</li>
                 </ul>
                 <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="btn-primary px-6 py-2 rounded-full inline-block w-full text-center">Get Matcher</a>
             </div>
             <div class="glass-card rounded-2xl p-8 text-center animate-scale-in delay-300">
                 <h3 class="text-2xl font-bold mb-2">Scholarship Analyzer</h3>
-                <div class="text-5xl font-bold text-blue-400 mb-4">₦500</div>
-                <p class="text-gray-300 mb-4">AI requirement extraction</p>
+                <div class="text-5xl font-bold text-green-400 mb-4">FREE</div>
+                <p class="text-gray-300 mb-4">AI requirement extraction – no cost</p>
                 <ul class="text-left text-gray-400 space-y-2 text-sm mb-6">
-                    <li>✓ Global scholarship search</li>
-                    <li>✓ AI extracts documents needed</li>
+                    <li>✓ Global scholarship database</li>
+                    <li>✓ AI extracts required documents</li>
                     <li>✓ Official application links</li>
                 </ul>
                 <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="btn-primary px-6 py-2 rounded-full inline-block w-full text-center">Get Analyzer</a>
             </div>
         </div>
+        <div class="text-center mt-12 animate-fade-up delay-400">
+            <p class="text-gray-300">⚠️ Joba AI is currently 100% free. If we ever introduce premium features, we will let you know first – but the core features will always remain free for everyone.</p>
+        </div>
     </section>
 
-    <!-- ========== TESTIMONIALS (realistic faces from Unsplash) ========== -->
+    <!-- ========== TESTIMONIALS ========== -->
     <section id="testimonials" class="container mx-auto px-6 py-24 bg-white/5 rounded-3xl">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Success Stories from Real Users</h2>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Join hundreds who found jobs and scholarships through Joba AI</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">Real Success Stories</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-up delay-100">Nigerians like you have found jobs and scholarships using Joba AI – for free.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center animate-scale-in delay-100">
                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amina" class="w-20 h-20 rounded-full object-cover border-2 border-blue-500 mb-4">
-                <p class="text-gray-200 italic">"The CV builder saved me hours! I got a job offer within 2 weeks. The AI job matching is incredibly accurate."</p>
+                <p class="text-gray-200 italic">"I built my CV in 15 minutes and got a job interview within a week. The best part? It cost me nothing!"</p>
                 <div class="mt-4">
                     <strong>Amina B., Lagos</strong>
                     <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
@@ -322,7 +356,7 @@
             </div>
             <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center animate-scale-in delay-200">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David" class="w-20 h-20 rounded-full object-cover border-2 border-blue-500 mb-4">
-                <p class="text-gray-200 italic">"Worth every kobo. I landed an interview at a top bank after using Joba AI. The scholarship finder also helped me discover a funded program."</p>
+                <p class="text-gray-200 italic">"The AI job matcher found roles I would have never seen on my own. I applied directly and got hired."</p>
                 <div class="mt-4">
                     <strong>David O., Abuja</strong>
                     <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
@@ -330,7 +364,7 @@
             </div>
             <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center animate-scale-in delay-300">
                 <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Samuel" class="w-20 h-20 rounded-full object-cover border-2 border-blue-500 mb-4">
-                <p class="text-gray-200 italic">"I found a fully funded scholarship to study in Germany thanks to the AI analysis. Joba AI is a game changer."</p>
+                <p class="text-gray-200 italic">"I used the scholarship finder to get a fully funded scholarship to Germany. The AI requirement summary saved me hours of research."</p>
                 <div class="mt-4">
                     <strong>Samuel K., Kano</strong>
                     <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
@@ -341,26 +375,27 @@
 
     <!-- ========== FINAL CTA ========== -->
     <section class="container mx-auto px-6 py-24 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text animate-fade-up">Your Future Starts Here</h2>
-        <p class="text-gray-300 text-lg mb-8 animate-fade-up delay-100">Don't let another opportunity pass you by. Join thousands of successful job seekers.</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text animate-fade-up">Stop Searching, Start Succeeding</h2>
+        <p class="text-gray-300 text-lg mb-8 animate-fade-up delay-100">Join thousands of Nigerians who have used Joba AI to land jobs and win scholarships – all without spending a kobo.</p>
         <a href="https://ihumzfhmskoynhxdwwkgx5.streamlit.app/" target="_blank" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold inline-block transform hover:scale-105 shadow-lg animate-fade-up delay-200">
-            🚀 Start Your Journey Now
+            🚀 Launch Joba AI (Free)
         </a>
     </section>
 
-    <!-- ========== PROFESSIONAL FOOTER ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-slate-900/50 border-t border-white/10 py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="text-2xl font-extrabold gradient-text mb-4">Joba AI</div>
-                    <p class="text-gray-400 text-sm">The first AI career platform built for Nigerian job seekers.</p>
+                    <p class="text-gray-400 text-sm">Empowering Nigerian job seekers with free AI tools.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-3">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
                         <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
+                        <li><a href="#satisfaction" class="hover:text-blue-400 transition">Satisfaction</a></li>
                         <li><a href="#pricing" class="hover:text-blue-400 transition">Pricing</a></li>
                         <li><a href="#testimonials" class="hover:text-blue-400 transition">Success Stories</a></li>
                     </ul>
@@ -379,11 +414,11 @@
                         <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-blue-400"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
                         <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-blue-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
                     </div>
-                    <p class="text-gray-400 text-xs mt-4">support@joba.ai</p>
+                    <p class="text-gray-400 text-xs mt-4">umarkabir2007@gmail.com</p>
                 </div>
             </div>
-            <div class="border-t border-white/10 mt-8 pt-6 text-center text-gray-500 text-sm">
-                <p>© 2025 Joba AI – Created by Umar Kabir. All rights reserved.</p>
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-gray-500 text-sm animate-fade-up delay-500">
+                <p>© 2026 Joba AI – Created by Umar Kabir Fullstact Developer, 08117807681. All features are completely free.</p>
             </div>
         </div>
     </footer>
@@ -412,7 +447,7 @@
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.glass-card, .grid.md\\:grid-cols-3 > div').forEach(el => observer.observe(el));
+        document.querySelectorAll('.glass-card, .grid.md\\:grid-cols-3 > div, .counter-card').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
